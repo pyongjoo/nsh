@@ -10,7 +10,7 @@
 %
 % Details of this demo: This demo code compares the performance of NSH against
 % two other learning-based hashing algorithms using a randomly generated 10-D
-% uniform dataset. This code has been tested in Matlab R2013a and R2014b.
+% uniform dataset. This code has been tested in Matlab R2013a and R2015a.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 clear all;
