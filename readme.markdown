@@ -19,4 +19,5 @@ we used a state-of-the-art Hamming search algorithm Multi-Index Hashing with
 those hashing algorithms.
 
 http://www-personal.umich.edu/~pyongjoo/#nsh
+
 http://web.eecs.umich.edu/~pyongjoo/#nsh
