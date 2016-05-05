@@ -1,23 +1,31 @@
-# NEIGHBOR-SENSITIVE HASHING
+# Neighbor-Sensitive Hashing
 
-Neighbor-Sensitive Hashing is a state-of-the-art approximate k-Nearest Neighbor
-algorithm for high-dimensional objects which are represetned as vectors of
-hundreds of dimensions. Our work is based on a seemingly counter-intuitive (but
-effective) idea that increasing the distances between nearby objects in
-hashed-space (or equivanlently, Hamming space) results in hash functions that
-are only neighbor-sensitive. Our technique may not be an optimal choice if users
-are interested in sorting all data objects in a database in terms of their
-distances from a query. However, our techinique is greatly successful at
-distinguishing k-Nearest Neighbor objects when the value of k is small enough
-compared to the number of the total objects in a database.
+## Overview
 
-Our work has shown superior performances over other state-of-the-art techniques
-such as Spectral Hashing, Spherical Hashing, Complementary Projection Hashing,
-and so on, according to our comprehensive experiments not only including
-"codesize vs. recall" but also "latency vs. recall"; for search latency measure,
-we used a state-of-the-art Hamming search algorithm Multi-Index Hashing with
-those hashing algorithms.
+Neighbor-Sensitive Hashing is a state-of-the-art approximate k-Nearest Neighbor search algorithm in high-dimensional space. The searching capability in high-dimensional space enables us to search images or documents, both of which can be represented by high-dimensional vectors.
 
-http://www-personal.umich.edu/~pyongjoo/#nsh
+Our work is based on the intuition that we do not have to capture the distances to distant objects (i.e., the objects that are not likely to be queries' k-nearest neighbors). Instead, we use the limited resource (hash bits) for more accurately discerning the comparative distances to close objects (i.e., the objects that are likely to be queries' k-nearest neighbors). Counter-intuitively, this is possible by increasing the distances between nearby objects in a hashed-space (or equivalently, Hamming space), which contrasts to the objectives of many existing algorithms.
 
-http://web.eecs.umich.edu/~pyongjoo/#nsh
+## Superior Performance
+
+Our work has shown superior performances over other state-of-the-art techniques such as [Spectral Hashing](http://papers.nips.cc/paper/3383-spectral-hashing), [Spherical Hashing](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6248024), [Complementary Projection Hashing](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6751141), and so on, according to our comprehensive experiments. Our experiments not only include "codesize vs. recall" analysis in many machine learning literatures, but also include "latency vs. recall" analysis. Find more detail in [our paper](http://www.vldb.org/pvldb/vol9/p144-park.pdf) published in PVLDB 2016.
+
+## Demonstration (only in 10 secs)
+
+Anyone who has Matlab installed on her machine can download and run our code in less than 10 seconds. For comparison, we also ship our code with two state-of-the-art learning-based hashing-algorithms.
+
+Download code in this repository, and run a demo by typing `runDemo` in Matlab console.
+A simple example of using our module.
+
+  % train our model for b-bit hashcode
+  model = trainNSH(X, b);
+
+  % compress a dataset and a query set
+  % note: a single byte holds eight bits; so may be hard to interpret
+  XB = model.hash(X);
+  QB = model.hash(Q);
+
+### Misc.
+
+[Link to author's website](http://web.eecs.umich.edu/~pyongjoo/#nsh)
+
