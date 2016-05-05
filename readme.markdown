@@ -17,13 +17,13 @@ Anyone who has Matlab installed on her machine can download and run our code in 
 Download code in this repository, and run a demo by typing `runDemo` in Matlab console.
 A simple example of using our module.
 
-  % train our model for b-bit hashcode
-  model = trainNSH(X, b);
+    % train our model for b-bit hashcode
+    model = trainNSH(X, b);
 
-  % compress a dataset and a query set
-  % note: a single byte holds eight bits; so may be hard to interpret
-  XB = model.hash(X);
-  QB = model.hash(Q);
+    % compress a dataset and a query set
+    % note: a single byte holds eight bits; so may be hard to interpret
+    XB = model.hash(X);
+    QB = model.hash(Q);
 
 ### Misc.
 
