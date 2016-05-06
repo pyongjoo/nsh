@@ -27,5 +27,5 @@ A simple example of using our module.
 
 ### Misc.
 
-[Link to author's website](http://web.eecs.umich.edu/~pyongjoo/#nsh)
+[Link to author's website](http://yongjoopark.com)
 
