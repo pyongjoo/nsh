@@ -37,7 +37,7 @@ fprintf('The value of r: %d\n', r);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Compute groundtruth data
-fprintf('\nGenerating Groundtruth.. this make take a while..  ');
+fprintf('\nGenerating Groundtruth.. this may take a while..  ');
 G = zeros(size(Q,1), k);
 parfor i = 1:size(Q,1)
     dd = distMat(Q(i,:),X);
